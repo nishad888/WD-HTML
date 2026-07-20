@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session 5: Semantic HTML5 Tags</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 750px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+        h1 { color: #2b3a67; }
+        .note { background: #eef1fb; padding: 10px 14px; border-radius: 6px; font-size: 0.9em; color: #444; }
+        .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+        @media (max-width: 600px) { .compare { grid-template-columns: 1fr; } }
+        .compare h3 { font-size: 0.95em; color: #3b4a7a; }
+        .divlayout div, .semantic > * { border: 1px dashed #999; padding: 8px; margin-bottom: 6px; border-radius: 4px; font-size: 0.85em; }
+        header, nav, main, article, aside, footer, section {
+            border: 1px dashed #4a5fc1; padding: 8px; margin-bottom: 6px; border-radius: 4px; font-size: 0.85em; background: #f4f6fb;
+        }
+        label.tag { font-weight: bold; color: #4a5fc1; }
+    </style>
+</head>
+<body>
+
+    <h1>Session 5 &mdash; Semantic HTML5 Tags</h1>
+
+    <h2>Why Semantic Tags Matter</h2>
+    <p class="note">Semantic tags describe the <em>meaning</em> of content, not just its
+    appearance. This helps search engines understand page structure (better SEO) and
+    lets screen readers navigate the page logically for visually impaired users
+    (better accessibility) — a generic <code>&lt;div&gt;</code> conveys none of that.</p>
+
+    <h2>Demo: Div-Based Layout vs. Semantic Layout</h2>
+    <div class="compare">
+        <div>
+            <h3>Before: All &lt;div&gt;s (no meaning)</h3>
+            <div class="divlayout">
+                <div><span class="tag">&lt;div class="header"&gt;</span> Site Title</div>
+                <div><span class="tag">&lt;div class="nav"&gt;</span> Home | About | Contact</div>
+                <div><span class="tag">&lt;div class="main"&gt;</span>
+                    <div><span class="tag">&lt;div class="article"&gt;</span> Blog Post Content</div>
+                    <div><span class="tag">&lt;div class="sidebar"&gt;</span> Related Links</div>
+                </div>
+                <div><span class="tag">&lt;div class="footer"&gt;</span> &copy; 2026 Site</div>
+            </div>
+        </div>
+        <div>
+            <h3>After: Semantic HTML5</h3>
+            <div class="semantic">
+                <header><span class="tag">&lt;header&gt;</span> Site Title</header>
+                <nav><span class="tag">&lt;nav&gt;</span> Home | About | Contact</nav>
+                <main>
+                    <span class="tag">&lt;main&gt;</span>
+                    <article><span class="tag">&lt;article&gt;</span> Blog Post Content</article>
+                    <aside><span class="tag">&lt;aside&gt;</span> Related Links</aside>
+                </main>
+                <footer><span class="tag">&lt;footer&gt;</span> &copy; 2026 Site</footer>
+            </div>
+        </div>
+    </div>
+
+    <h2>Semantic Tags Reference</h2>
+    <ul>
+        <li><code>&lt;header&gt;</code> &mdash; introductory content or site title, usually at the top</li>
+        <li><code>&lt;nav&gt;</code> &mdash; navigation links</li>
+        <li><code>&lt;main&gt;</code> &mdash; the primary content of the page (one per page)</li>
+        <li><code>&lt;article&gt;</code> &mdash; a self-contained piece of content (blog post, news story)</li>
+        <li><code>&lt;section&gt;</code> &mdash; a thematic grouping of content</li>
+        <li><code>&lt;aside&gt;</code> &mdash; content tangentially related to the main content (sidebar)</li>
+        <li><code>&lt;footer&gt;</code> &mdash; footer content, usually at the bottom</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A demonstration page showing accessibility and SEO best practices in HTML, including meta tags, alt attributes, and proper heading structure.">
+    <meta name="keywords" content="HTML, accessibility, SEO, alt text, aria-label, meta tags">
+    <title>Session 8: Accessibility & SEO-Friendly HTML</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+        h1 { color: #2b3a67; }
+        .note { background: #eef1fb; padding: 10px 14px; border-radius: 6px; font-size: 0.9em; color: #444; }
+        pre { background: #1e2338; color: #e6e8f5; padding: 14px; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; }
+        code { background: #eef1fb; padding: 2px 6px; border-radius: 4px; }
+        .checklist li { margin-bottom: 6px; }
+        .pass { color: #1a7a1a; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Session 8 &mdash; Accessibility &amp; SEO-Friendly HTML</h1>
+
+    <h2>Role of alt, title, and aria-label</h2>
+    <ul>
+        <li><code>alt="..."</code> on images &mdash; describes the image for screen readers and search engines</li>
+        <li><code>title="..."</code> &mdash; shows a tooltip on hover, adds extra context</li>
+        <li><code>aria-label="..."</code> &mdash; gives assistive technology a label when there's no visible text, e.g. an icon-only button</li>
+    </ul>
+    <pre>&lt;img src="logo.png" alt="Company logo"&gt;
+&lt;a href="/report.pdf" title="Opens a PDF, 2MB"&gt;Download Report&lt;/a&gt;
+&lt;button aria-label="Close menu"&gt;&times;&lt;/button&gt;</pre>
+
+    <h2>Meta Tags: description, keywords, viewport</h2>
+    <p class="note">This page's own <code>&lt;head&gt;</code> demonstrates all three &mdash;
+    view the page source to see them:</p>
+    <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="A short summary shown in search results."&gt;
+&lt;meta name="keywords" content="HTML, accessibility, SEO"&gt;</pre>
+    <ul>
+        <li><strong>viewport</strong> &mdash; makes the page render correctly on mobile devices</li>
+        <li><strong>description</strong> &mdash; the snippet Google shows under your page title in search results</li>
+        <li><strong>keywords</strong> &mdash; largely ignored by modern Google, but still used by some search engines</li>
+    </ul>
+
+    <h2>Proper Heading Structure for Search Engines</h2>
+    <p>Headings should form a logical outline &mdash; one <code>&lt;h1&gt;</code> per page,
+    followed by <code>&lt;h2&gt;</code> for main sections and <code>&lt;h3&gt;</code> for
+    sub-sections, never skipping levels just for styling.</p>
+    <pre>&lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;h2&gt;Section&lt;/h2&gt;
+    &lt;h3&gt;Sub-section&lt;/h3&gt;
+  &lt;h2&gt;Another Section&lt;/h2&gt;</pre>
+
+    <h2>Demo: W3C Validator Checklist</h2>
+    <p class="note">To check for missing meta tags or structural errors, paste your HTML
+    into the <a href="https://validator.w3.org/#validate_by_input" target="_blank">W3C Markup Validator</a>.
+    This page was checked against the common issues it flags:</p>
+    <ul class="checklist">
+        <li><span class="pass">&check;</span> <code>&lt;!DOCTYPE html&gt;</code> declared</li>
+        <li><span class="pass">&check;</span> <code>lang</code> attribute set on <code>&lt;html&gt;</code></li>
+        <li><span class="pass">&check;</span> <code>&lt;meta charset&gt;</code> present</li>
+        <li><span class="pass">&check;</span> <code>&lt;title&gt;</code> present and descriptive</li>
+        <li><span class="pass">&check;</span> viewport meta tag present</li>
+        <li><span class="pass">&check;</span> every image (if any) has an <code>alt</code> attribute</li>
+        <li><span class="pass">&check;</span> heading levels not skipped</li>
+    </ul>
+
+</body>
+</html>

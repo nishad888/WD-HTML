@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session 6: Multimedia Integration</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+        h1 { color: #2b3a67; }
+        .note { background: #eef1fb; padding: 10px 14px; border-radius: 6px; font-size: 0.9em; color: #444; }
+        video, iframe { max-width: 100%; border-radius: 8px; margin-top: 10px; }
+        code { background: #eef1fb; padding: 2px 6px; border-radius: 4px; }
+        pre { background: #1e2338; color: #e6e8f5; padding: 14px; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <h1>Session 6 &mdash; Multimedia Integration</h1>
+
+    <h2>Embedding Video: &lt;video&gt;</h2>
+    <p>The <code>&lt;video&gt;</code> tag embeds video directly, with attributes to control
+    playback:</p>
+    <pre>&lt;video controls width="500"&gt;
+  &lt;source src="intro.mp4" type="video/mp4"&gt;
+  Your browser does not support video.
+&lt;/video&gt;</pre>
+    <p class="note"><strong>controls</strong> shows play/pause/volume UI &middot;
+    <strong>autoplay</strong> starts playback automatically &middot;
+    <strong>loop</strong> replays the video when it ends.</p>
+
+    <h2>Demo: Company Intro Video on Homepage (via YouTube iframe)</h2>
+    <p>Since we don't have a hosted video file, this demo embeds a YouTube video using an
+    <code>&lt;iframe&gt;</code> — the most common real-world way sites embed video:</p>
+    <iframe width="500" height="281"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Company Intro Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+    <h2>Embedding Audio: &lt;audio&gt;</h2>
+    <pre>&lt;audio controls&gt;
+  &lt;source src="theme.mp3" type="audio/mpeg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;</pre>
+    <p class="note">Audio uses the same core attributes as video: <code>controls</code>,
+    <code>autoplay</code>, and <code>loop</code>. Autoplay with sound is blocked by most
+    modern browsers unless the user has interacted with the page first.</p>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Portfolio &mdash; Contact</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 750px; margin: 0 auto; padding: 0 20px 40px; line-height: 1.6; color: #222; }
+        header { background: #2b3a67; color: white; padding: 20px; margin: 0 -20px 24px; }
+        header h1 { margin: 0 0 4px; }
+        nav a { color: white; margin-right: 16px; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        nav a.active { border-bottom: 2px solid #ffb84a; }
+        main section { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+        footer { text-align: center; color: #777; font-size: 0.85em; margin-top: 30px; }
+        label { display: block; margin-top: 12px; font-weight: bold; font-size: 0.9em; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: inherit; }
+        button { margin-top: 14px; background: #4a5fc1; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alex Morgan</h1>
+        <p>Aspiring Web Developer</p>
+        <nav>
+            <a href="session9-portfolio-index.html">Home</a>
+            <a href="session9-portfolio-about.html">About</a>
+            <a href="session9-portfolio-contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Get In Touch</h2>
+            <p>Reach out via the form below, or directly at
+            <a href="mailto:alex.morgan@example.com">alex.morgan@example.com</a>.</p>
+            <form onsubmit="return false;">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>&copy; 2026 Alex Morgan &mdash; Personal Portfolio Demo</footer>
+
+</body>
+</html>

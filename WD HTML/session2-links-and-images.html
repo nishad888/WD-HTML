@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session 2: Links and Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+        h1 { color: #2b3a67; }
+        .note { background: #eef1fb; padding: 10px 14px; border-radius: 6px; font-size: 0.9em; color: #444; }
+        img { max-width: 100%; border-radius: 8px; margin: 10px 0; }
+        code { background: #eef1fb; padding: 2px 6px; border-radius: 4px; }
+        ul { line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+    <h1>Session 2 &mdash; Working with Links and Images</h1>
+
+    <h2>Anchor Tags: &lt;a href=&quot;&hellip;&quot;&gt;</h2>
+    <p>Links are created with the anchor tag and a <code>href</code> attribute:</p>
+    <ul>
+        <li>External link (absolute path): <a href="https://www.google.com" target="_blank">Visit Google</a></li>
+        <li>External link (opens in new tab with <code>target="_blank"</code>): <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+        <li>Internal link (relative path, would point to a page in the same folder): <a href="about.html">About Page (relative path example)</a></li>
+        <li>Email link: <a href="mailto:hello@example.com">Send an Email</a></li>
+    </ul>
+
+    <h2>Image Tags: &lt;img src=&quot;&hellip;&quot;&gt;</h2>
+    <p>Images are embedded with the <code>&lt;img&gt;</code> tag. It's a self-closing tag
+    that requires a <code>src</code> (source) and should always include an
+    <code>alt</code> attribute for accessibility.</p>
+
+    <img src="https://picsum.photos/500/250" alt="A random decorative landscape photo used to demonstrate the img tag">
+    <p class="note">Alt text describes the image for screen readers and displays if the
+    image fails to load. It's also important for SEO, since search engines read it to
+    understand image content.</p>
+
+    <h2>Relative vs Absolute Paths</h2>
+    <table style="border-collapse:collapse; width:100%; margin-top:10px;">
+        <tr style="background:#eef1fb;">
+            <th style="text-align:left; padding:8px; border:1px solid #ddd;">Type</th>
+            <th style="text-align:left; padding:8px; border:1px solid #ddd;">Example</th>
+            <th style="text-align:left; padding:8px; border:1px solid #ddd;">Meaning</th>
+        </tr>
+        <tr>
+            <td style="padding:8px; border:1px solid #ddd;">Absolute</td>
+            <td style="padding:8px; border:1px solid #ddd;"><code>https://example.com/img.jpg</code></td>
+            <td style="padding:8px; border:1px solid #ddd;">Full URL — works from anywhere</td>
+        </tr>
+        <tr>
+            <td style="padding:8px; border:1px solid #ddd;">Relative</td>
+            <td style="padding:8px; border:1px solid #ddd;"><code>images/photo.jpg</code></td>
+            <td style="padding:8px; border:1px solid #ddd;">Path relative to the current file's location</td>
+        </tr>
+    </table>
+
+    <h2>Why Alt Text Matters for Accessibility &amp; SEO</h2>
+    <p>Screen readers announce alt text aloud so visually impaired users know what an
+    image shows. Search engines also use alt text to index images, which can drive
+    additional traffic through image search results. An image without alt text is
+    both inaccessible and a missed SEO opportunity.</p>
+
+</body>
+</html>

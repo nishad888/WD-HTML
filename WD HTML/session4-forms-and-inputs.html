@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session 4: Forms & Inputs</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 650px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+        h1 { color: #2b3a67; }
+        .note { background: #eef1fb; padding: 10px 14px; border-radius: 6px; font-size: 0.9em; color: #444; }
+        form { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 24px; margin-top: 16px; }
+        label { display: block; margin-top: 14px; font-weight: bold; font-size: 0.92em; }
+        input, select, textarea { width: 100%; padding: 8px 10px; margin-top: 4px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; font-size: 0.95em; box-sizing: border-box; }
+        fieldset { margin-top: 14px; border: 1px solid #ccc; border-radius: 6px; }
+        .radio-group label, .checkbox-group label { display: inline-block; font-weight: normal; margin-right: 16px; }
+        .radio-group input, .checkbox-group input { width: auto; margin-right: 6px; }
+        button { margin-top: 18px; background: #4a5fc1; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 0.95em; }
+        small { color: #777; }
+    </style>
+</head>
+<body>
+
+    <h1>Session 4 &mdash; Forms &amp; Inputs</h1>
+
+    <p class="note"><strong>Note:</strong> This form uses <code>method="get"</code> so
+    submitting it just appends the values to the URL for demo purposes (no server needed).
+    In a real app, <code>method="post"</code> would be used to send data to a server
+    without exposing it in the URL.</p>
+
+    <h2>Demo: Contact Us Form</h2>
+    <form action="" method="get" onsubmit="return false;">
+
+        <label for="fullname">Full Name (required)</label>
+        <input type="text" id="fullname" name="fullname" required placeholder="Jane Doe">
+
+        <label for="email">Email Address (required)</label>
+        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+
+        <label for="phone">Phone Number (pattern: 10 digits)</label>
+        <input type="text" id="phone" name="phone" pattern="[0-9]{10}" placeholder="9876543210" title="Enter a 10-digit phone number">
+
+        <label for="password">Password (required, min 6 characters)</label>
+        <input type="password" id="password" name="password" required minlength="6">
+
+        <fieldset>
+            <legend>Preferred Contact Method</legend>
+            <div class="radio-group">
+                <label><input type="radio" name="contactMethod" value="email" checked> Email</label>
+                <label><input type="radio" name="contactMethod" value="phone"> Phone</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Topics You're Interested In</legend>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="topics" value="html"> HTML</label>
+                <label><input type="checkbox" name="topics" value="css"> CSS</label>
+                <label><input type="checkbox" name="topics" value="js"> JavaScript</label>
+            </div>
+        </fieldset>
+
+        <label for="reason">Reason for Contact</label>
+        <select id="reason" name="reason">
+            <option value="">-- Select a reason --</option>
+            <option value="support">Support</option>
+            <option value="sales">Sales Inquiry</option>
+            <option value="feedback">Feedback</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+
+        <button type="submit">Send Message</button>
+        <small><br>This is a static demo — submitting won't send real data.</small>
+    </form>
+
+    <h2>Form vs. Server: The Key Difference</h2>
+    <p><strong>Front-end validation</strong> (like the <code>required</code> and
+    <code>pattern</code> attributes above) runs in the browser, instantly, before anything
+    is sent — it improves the user experience but can be bypassed. <strong>Server-side
+    handling</strong> happens after submission: the server (using PHP, Node.js, etc.)
+    must independently re-validate and process the data, because client-side checks alone
+    are never secure enough to trust on their own.</p>
+
+</body>
+</html>
